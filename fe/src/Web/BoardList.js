@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import "../css/BoardList.css";
 import axios from 'axios';
+import BoardWrite from './BoardWrite';
 
 function BoardList() {
     
@@ -28,7 +29,7 @@ function BoardList() {
             </div>
 
             <div> {/* 새 글 작성하기*/}
-            글을 작성해주세요 칸 
+            <BoardWrite />
             </div>
                 {data ? data.map((datas)=>(
                     <div className="boardview">
