@@ -18,7 +18,7 @@
 .writeText{
     border:none;
     resize:none;
-    width:792px;
+    width:754px;
     height:350px;
     margin-left:10px;
     margin-right:13px;
@@ -26,9 +26,47 @@
     outline:none;
 }
 
+.checkboxSpace{
+    display:inline-flex;
+    align-items: center;
+    margin-right:10px;
+    margin-left: 470px;
+}
+
 .submitForm{
     border:none;
     background-color: white;
-    
+}
 
+.questionCheckbox{
+    border-radius: 4px;
+    border: 2px solid #D3D3D3;
+    outline: none;
+    appearance: none;
+    margin-left:24px;
+    margin-right:5px;
+    height:20px;
+    width:21px;
+}
+
+.questionCheckbox:checked{
+    background: url("../img/checkbox.png") center no-repeat; 
+    border-color: #36A0CA; 
+}
+
+.anonyCheckbox{
+    border: 2px solid #D3D3D3;
+    border-radius: 4px;
+    outline: none;
+    appearance: none;
+    margin-left:24px;
+    margin-right:5px;
+    height:20px;
+    width:21px;
+    background-size:cover;
+}
+
+.anonyCheckbox:checked{
+    background: url("../img/checkboxRed.png") center no-repeat; 
+    border-color: #A60406; 
 }
