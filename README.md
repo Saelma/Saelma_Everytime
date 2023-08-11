@@ -10,4 +10,5 @@
 1. fe 폴더로 가서 npm install을 합니다.
 2. npm run start를 합니다.
 
-## 3. localhost:3000으로 갑니다 ( 현재 작업 상황에선 board/view에서 볼 수 있습니다.) 
+## 3. 실행 테스트
+- localhost:3000으로 갑니다 ( 현재 작업 상황에선 board/view에서 볼 수 있습니다.) 
