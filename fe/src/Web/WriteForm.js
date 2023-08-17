@@ -24,7 +24,7 @@ function WriteForm() {
 
   return (
     <div className="writeForm">
-      <form class="write" action="/board/writedo" method="post">
+      <form className="write" action="/board/writedo" method="post">
         <div>
           <input name="title" className="writeTitle " placeholder="글 제목"></input>
         </div>

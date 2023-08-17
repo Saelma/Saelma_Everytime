@@ -21,6 +21,10 @@ public class BoardService {
     public void write(free_table Free_table) throws Exception{
         boardRepository.save(Free_table);
     }
+
+    public void boardDelete(Integer id) {
+        boardRepository.deleteById(id);
+    }
 //
 //    public Page<free_table> boardList(Pageable pageable){
 //        return boardRepository.findAll(pageable);
@@ -31,10 +35,6 @@ public class BoardService {
 //        return boardRepository.findById(id).get();
 //    }
 
-
-//    public void boardDelete(Integer id){
-//        boardRepository.deleteById(id);
-//    }
 //
 //    public Page<free_table> boardSearchList(String searchKeyword, Pageable pageable){
 //        return boardRepository.findByTitleContaining(searchKeyword, pageable);

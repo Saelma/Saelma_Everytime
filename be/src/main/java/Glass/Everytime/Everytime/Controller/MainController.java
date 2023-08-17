@@ -11,6 +11,7 @@ import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.view.RedirectView;
@@ -31,11 +32,14 @@ public class MainController {
     @PostMapping("/board/writedo")
     public RedirectView boardWrite(Model model, free_table freeTable) throws Exception{
         boardService.write(freeTable);
-
         return new RedirectView("http://localhost:3000/board/view");
 
     }
-
+    @GetMapping("/board/delete/{id}")
+    public RedirectView boardDelete(Model model, @PathVariable Integer id){
+        boardService.boardDelete(id);
+        return new RedirectView("http://localhost:3000/board/view");
+    }
 //
 //    @GetMapping("/board/list")
 //    public String boardlist(Model model,

@@ -21,6 +21,14 @@ function BoardList() {
             console.log(err);
         })
     }
+    
+    const handleDelete = async (id) => {
+        const response = await fetch(`/board/delete/${id}`, {
+            method: 'GET',
+          });
+          alert("글 삭제가 완료되었습니다.");
+          window.location.reload();
+    }
 
     return (
         <div className="App">
@@ -32,15 +40,15 @@ function BoardList() {
             <BoardWrite />
             </div>
                 {data ? data.map((datas)=>(
-                    <div className="boardview">
-                        <div key={datas.no}>
+                    <div className="boardview" key={datas.id}>
                            <div className="title">{datas.title}</div>  {/* 제목 */}
                             <div className="content">{datas.content}</div> {/* 내용 */}
                                 <div className="author">
                                      <span className="time"> {datas.timemonth}/{datas.timedate} {datas.timehours}:{datas.timeminute} </span>
-                                     {datas.author}</div>
+                                     {datas.author}
+                                        <button onClick={() => handleDelete(datas.id)}>삭제</button>
+                                     </div>
                                 {/* 저자 */}
-                        </div>
                     </div>
                 )) : ''}
             </div>
