@@ -19,7 +19,7 @@ function WriteForm() {
   }
 
   const handleSubmit = async () => {
-    navigate('/board/view');
+    navigate('/board/list');
   }
 
   return (

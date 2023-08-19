@@ -1,0 +1,42 @@
+.boardview{
+    border: 1px solid #E3E3E3;
+    text-align:left;
+    width:780px;
+    height:95.6px;
+    padding-top:15px;
+    padding-left:15px;
+    color: gray;
+    
+}
+
+.title{
+    color:black;
+    padding-bottom:11px;
+    font-weight: bold;
+    font-size:20px;
+}
+
+.content{
+    padding-bottom:5px;
+    font-size:14px;    
+}
+.author{
+    color:black;
+}
+
+.time{
+    font-size:14px;
+    color: gray;
+}
+
+.boardTitle{
+    border:1px solid #E3E3E3;
+    font-weight:bold;
+    font-size:20px;
+    height:30px;
+    padding-top:10px;
+    padding-bottom:10px;
+    padding-left:15px;
+    margin-top:25px;
+    margin-bottom:5px;
+}

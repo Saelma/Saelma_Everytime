@@ -1,5 +1,6 @@
 import BoardList from "./BoardList";
 import "../css/freeBoard.css";
+import "../css/BoardList.css";
 
 function freeBoard() {
     return(

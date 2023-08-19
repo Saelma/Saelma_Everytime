@@ -3,12 +3,6 @@ package Glass.Everytime.Everytime.Controller;
 import Glass.Everytime.Everytime.Entity.free_table;
 import Glass.Everytime.Everytime.service.BoardService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
-import org.springframework.data.web.PageableDefault;
-import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -24,21 +18,27 @@ public class MainController {
     @Autowired
     private BoardService boardService;
 
-    @GetMapping("/board/view")
+    @GetMapping("/board/list")
     public List<free_table> getBoardList(){
-        return boardService.boardView();
+        return boardService.boardList();
     }
 
     @PostMapping("/board/writedo")
     public RedirectView boardWrite(Model model, free_table freeTable) throws Exception{
         boardService.write(freeTable);
-        return new RedirectView("http://localhost:3000/board/view");
+        return new RedirectView("http://localhost:3000/board/list");
 
     }
     @GetMapping("/board/delete/{id}")
     public RedirectView boardDelete(Model model, @PathVariable Integer id){
         boardService.boardDelete(id);
-        return new RedirectView("http://localhost:3000/board/view");
+        return new RedirectView("http://localhost:3000/board/list");
+    }
+
+    @GetMapping("/board/view/{id}")
+    public free_table boardView(Model model, @PathVariable Integer id){
+        model.addAttribute("board",boardService.boardView(id));
+        return boardService.boardView(id);
     }
 //
 //    @GetMapping("/board/list")
