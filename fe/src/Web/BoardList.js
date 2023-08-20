@@ -25,17 +25,7 @@ function BoardList() {
 
     const handleBoardView = (id) => {
         navigate(`/board/view/${id}`, {state : { id}});
-        console.log(id);
     }
-    
-    const handleDelete = async (id) => {
-        const response = await fetch(`/board/delete/${id}`, {
-            method: 'GET',
-          });
-          alert("글 삭제가 완료되었습니다.");
-          window.location.reload();
-    }
-
 
 
     return (
@@ -54,7 +44,6 @@ function BoardList() {
                                 <div className="author">
                                      <span className="time"> {datas.timemonth}/{datas.timedate} {datas.timehours}:{datas.timeminute} </span>
                                      {datas.author}
-                                        <button onClick={() => handleDelete(datas.id)}>삭제</button>
                                      </div>
                                 {/* 저자 */}
                     </div>

@@ -1,5 +1,4 @@
 import React, { useState} from "react";
-import { useNavigate } from 'react-router-dom';
 import "../css/WriteForm.css";
 import writeImage from "../img/write.png";
 import Hashtag from "../img/샾.png";
@@ -8,7 +7,6 @@ import ClipFile from "../img/File.png";
 function WriteForm() {
   const [questionBoard, setQuestionBoard] = useState(false);
   const [anonyBoard, setAnonyBoard] = useState(false);
-  const navigate = useNavigate();
 
   const handleQuestion = () => {
     setQuestionBoard(!questionBoard);
