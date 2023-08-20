@@ -15,7 +15,7 @@
             BoardListView();
         },[])
 
-        async function BoardListView() {
+        const BoardListView = async () => {
             await axios.get(`/board/view/${id}`)
             .then((res)=>{ 
                 console.log(res.data);
@@ -26,7 +26,7 @@
             })
         }
 
-        async function BoardModify(){
+        const BoardModify = async () => {
             setModifyBoard(!modifyBoard);
             console.log(modifyBoard);
 
