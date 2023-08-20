@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.view.RedirectView;
 
 import java.util.List;
@@ -39,6 +40,20 @@ public class MainController {
     public free_table boardView(Model model, @PathVariable Integer id){
         model.addAttribute("board",boardService.boardView(id));
         return boardService.boardView(id);
+    }
+
+    @PostMapping("board/update/{id}")
+    public RedirectView boardupdate(
+            @PathVariable("id") Integer id, free_table freeTable, Model model)
+            throws Exception{
+
+        free_table boardTemp = boardService.boardView(id);
+        boardTemp.setTitle(freeTable.getTitle());
+        boardTemp.setContent(freeTable.getContent());
+
+        boardService.write(boardTemp);
+
+        return new RedirectView("http://localhost:3000/board/list");
     }
 //
 //    @GetMapping("/board/list")

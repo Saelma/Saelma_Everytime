@@ -5,10 +5,14 @@ import writeImage from "../img/write.png";
 import Hashtag from "../img/샾.png";
 import ClipFile from "../img/File.png";
 
-function WriteForm() {
+function ModifyForm(data, boardTitle, boardContent) {
   const [questionBoard, setQuestionBoard] = useState(false);
   const [anonyBoard, setAnonyBoard] = useState(false);
   const navigate = useNavigate();
+  
+  const boardId = data.id;
+  const titles = data.boardTitle;
+  const contents= data.boardContent;
 
   const handleQuestion = () => {
     setQuestionBoard(!questionBoard);
@@ -20,9 +24,10 @@ function WriteForm() {
 
   return (
     <div className="writeForm">
-      <form className="write" action="/board/writedo" method="post">
+      <form className="write" action={`/board/update/${boardId}`} method="post">
         <div>
           <input name="title" className="writeTitle " placeholder="글 제목"></input>
+          
         </div>
 
         <hr color="#E3E3E3"></hr>
@@ -95,4 +100,4 @@ function WriteForm() {
   );
 }
 
-export default WriteForm;
+export default ModifyForm;
