@@ -58,11 +58,17 @@
                     boardTitle = {data.title}
                     
                     />  
-                ) : (            <div className="boardview">
-                {data && <div className="title">{data.title}
-                <span><button onClick={BoardModify}> 수정하기 </button></span></div> } 
+                ) : (            
+                <div className="boardview">
+                {data && <div className="title">{data.author}
+                <div className="button-container">
+                <span className="Button-Text" onClick={BoardModify}>수정</span>
+                <span className="Button-Text" onClick={() => handleDelete(data.id)}>삭제</span>
+                </div>
+                </div> } 
+                {data && <div className="title">{data.title}</div>}
                 {data && <div className="content">{data.content}</div>}
-                <button onClick={() => handleDelete(data.id)}>삭제</button>
+
                 </div>)} 
                 <div>
                 </div>

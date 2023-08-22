@@ -7,13 +7,22 @@ import ClipFile from "../img/File.png";
 function WriteForm() {
   const [questionBoard, setQuestionBoard] = useState(false);
   const [anonyBoard, setAnonyBoard] = useState(false);
+  const [author, setAuthor] = useState('');
 
   const handleQuestion = () => {
     setQuestionBoard(!questionBoard);
   }
 
-  const handleAnony = () => {
+  const anonySetting = () => {
     setAnonyBoard(!anonyBoard);
+  }
+
+  const anonySubmit = () => {
+    if(anonyBoard){
+      setAuthor('익명')
+    }else{
+      setAuthor('');
+    }
   }
 
   return (
@@ -68,7 +77,10 @@ function WriteForm() {
           
           {questionBoard ? (<label className="checkboxLabel" style={{color:"#36A0CA"}}> 질문</label>) : ( <label className="checkboxLabel"> 질문</label>) }  
 
-          <input type="checkbox" className="anonyCheckbox" onChange={handleAnony} />
+
+          <input type="hidden" name="author" value={author} />
+
+          <input type="checkbox" className="anonyCheckbox" onChange={anonySetting} />
           {anonyBoard ? (<label className="checkboxLabel" style={{color:"#A60406"}}> 익명</label>) : (<label className="checkboxLabel"> 익명</label>) }
           </div>
 
@@ -76,8 +88,8 @@ function WriteForm() {
             type="submit"
             className="submitForm"
             style={{ display: "inline-block" }}
+            onClick={anonySubmit}
           >
-
             <img
               src={writeImage}
               alt="제출"

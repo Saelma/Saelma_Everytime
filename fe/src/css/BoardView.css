@@ -3,10 +3,9 @@
     text-align:left;
     width:780px;
     height:95.6px;
-    padding-top:15px;
+    padding-top:10x;
     padding-left:15px;
     color: gray;
-    
 }
 
 .title{
@@ -14,6 +13,9 @@
     padding-bottom:11px;
     font-weight: bold;
     font-size:20px;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .content{
@@ -37,6 +39,20 @@
     padding-top:10px;
     padding-bottom:10px;
     padding-left:15px;
-    margin-top:25px;
+    margin-top:17px;
     margin-bottom:5px;
+}
+
+.Button-Text{
+    cursor: pointer;
+    color: gray;
+    font-size:12px;
+    margin-left:auto;
+    margin-right:15px;
+}
+
+.Button-container{
+    display:flex;
+    gap: 10px;
+    justify-content: center;
 }
