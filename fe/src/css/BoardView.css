@@ -56,3 +56,17 @@
     gap: 10px;
     justify-content: center;
 }
+
+.modifyButton{
+    border: 1px solid #A60406;
+    border-radius: 5%;
+    background-color: white;
+    appearance: none;
+    font-weight: bold;
+    font-size:14px;
+    color:#ca3d3f;
+    height: 38px;
+    width:120px;
+    margin-left:5px;
+    cursor:pointer;
+}

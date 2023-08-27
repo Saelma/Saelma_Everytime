@@ -52,12 +52,15 @@
                     자유게시판
                 </div>
                 {data && modifyBoard ? (
+                    <div>
                     <ModifyForm
                     id = {data.id}
                     boardContent = {data.content}
                     boardTitle = {data.title}
                     
-                    />  
+                    />
+                    <button className="modifyButton" onClick={BoardModify}> {'<  '}글 수정 취소 </button>
+                    </div>
                 ) : (            
                 <div className="boardview">
                 {data && <div className="title">{data.author}

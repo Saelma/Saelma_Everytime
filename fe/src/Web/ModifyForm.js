@@ -21,7 +21,8 @@ function ModifyForm(data, boardTitle, boardContent) {
   }
 
   return (
-    <div className="writeForm">
+    <div>
+      <div className="writeForm">
       <form className="write" action={`/board/update/${boardId}`} method="post">
         <div>
           <input name="title" className="writeTitle " placeholder="글 제목"></input>
@@ -94,6 +95,7 @@ function ModifyForm(data, boardTitle, boardContent) {
           </button>
         </div>
       </form>
+      </div>
     </div>
   );
 }
