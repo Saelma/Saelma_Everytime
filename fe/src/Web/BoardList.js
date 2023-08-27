@@ -41,9 +41,13 @@ function BoardList() {
                     <div className="boardview" key={datas.id} onClick={() => handleBoardView(datas.id)}>
                            <div className="title">{datas.title}</div>  {/* 제목 */}
                             <div className="content">{datas.content}</div> {/* 내용 */}
-                                <div className="author">
-                                     <span className="time"> {datas.timemonth}/{datas.timedate} {datas.timehours}:{datas.timeminute} </span>
+                                <div>
+                                     <span className="times"> 
+                                     {datas.timemonth.toString().padStart(2, '0')}/{datas.timedate.toString().padStart(2, '0')} {datas.timehours.toString().padStart(2, '0')}:{datas.timeminute.toString().padStart(2, '0')} 
+                                     </span>
+                                     <span className="author">
                                      {datas.author}
+                                     </span>
                                      </div>
                                 {/* 저자 */}
                     </div>

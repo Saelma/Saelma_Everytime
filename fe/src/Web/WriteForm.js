@@ -8,6 +8,10 @@ function WriteForm() {
   const [questionBoard, setQuestionBoard] = useState(false);
   const [anonyBoard, setAnonyBoard] = useState(false);
   const [author, setAuthor] = useState('');
+  const [month, setMonth] = useState('');
+  const [days, setDays] = useState('');
+  const [hours, setHours] = useState('');
+  const [minutes, setMinutes] = useState('');
 
   const handleQuestion = () => {
     setQuestionBoard(!questionBoard);
@@ -18,6 +22,15 @@ function WriteForm() {
   }
 
   const anonySubmit = () => {
+    const currentDate = new Date();
+    const currentMonth = (currentDate.getMonth() + 1).toString();
+    const currentDay = currentDate.getDate().toString();
+    const currentHours = currentDate.getHours().toString();
+    const currentMinutes = currentDate.getMinutes().toString();
+    setMonth(currentMonth);
+    setDays(currentDay);
+    setHours(currentHours);
+    setMinutes(currentMinutes);
     if(anonyBoard){
       setAuthor('익명')
     }else{
@@ -79,6 +92,10 @@ function WriteForm() {
 
 
           <input type="hidden" name="author" value={author} />
+          <input type="hidden" name="timemonth" value={month} />
+          <input type="hidden" name="timedate" value={days} />
+          <input type="hidden" name="timehours" value={hours} />
+          <input type="hidden" name="timeminute" value={minutes} />
 
           <input type="checkbox" className="anonyCheckbox" onChange={anonySetting} />
           {anonyBoard ? (<label className="checkboxLabel" style={{color:"#A60406"}}> 익명</label>) : (<label className="checkboxLabel"> 익명</label>) }
