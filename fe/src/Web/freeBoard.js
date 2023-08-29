@@ -1,17 +1,18 @@
 import BoardList from "./BoardList";
 import "../css/freeBoard.css";
-import "../css/BoardList.css";
+import Header from './Header';
 
 function freeBoard() {
     return(
-        <div className="freeBoard">
+        <div>
             <div>
-                아
-            </div>
-            <div >
+                <span className="header"> 
+            <Header />
+            </span>
+            <span className="freeBoard">
             <BoardList />
+            </span>
             </div>
-            아  
          </div>
     );
 }

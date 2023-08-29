@@ -29,10 +29,12 @@ function BoardList() {
 
 
     return (
-        <div className="App">
+        <div>
+            <div className="App">
             <div className="boardTitle"> {/* 게시판 제목 */}
                 자유게시판
             </div>
+
 
             <div> {/* 새 글 작성하기*/}
             <BoardWrite />
@@ -52,6 +54,7 @@ function BoardList() {
                                 {/* 저자 */}
                     </div>
                 )) : ''}
+            </div>
             </div>
       );
 

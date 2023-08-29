@@ -2,3 +2,9 @@
     display: flex;
     justify-content: center;
 }
+
+.header{
+    justify-content: center;
+    display:flex;
+    align-items: center;
+}
