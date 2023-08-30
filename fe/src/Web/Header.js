@@ -1,8 +1,16 @@
+import { useNavigate } from 'react-router-dom';
 import '../css/Header.css';
 import EverytimeLogo from '../img/nav.logo.png'
-
+import Person from '../img/person.png';
+import Chat from '../img/chat.png';
 
 function Header(){
+    const navigate = useNavigate();
+    const BoardNavigate = () => {
+        navigate('/board/list');
+    }
+    
+    
     return(
         <div className="headerItems">
             <img src={EverytimeLogo} className="Logo" alt="파일첨부"
@@ -22,30 +30,51 @@ function Header(){
                     </div>
               </span>
               <span className="headerTitle">
-            <span>
+            <span className="headerLink" onClick={BoardNavigate}>
                 게시판
             </span>
-            <span>
+            <span className="headerLink">
                 시간표
             </span>
-            <span>
+            <span className="headerLink">
                 강의실
             </span>
-            <span>
+            <span className="headerLink">
                 학점계산기
             </span>
-            <span>
+            <span className="headerLink">
                 친구
             </span>
-            <span>
+            <span className="headerLink">
                 책방
             </span>
-            <span>
+            <span className="headerLink">
                 캠퍼스픽
             </span>
             </span>
-        </div>
 
+            <img src={Chat} className="imgCss" alt="Chat" style={{
+                  width: "25px",
+                  height: "30px",
+                  cursor: "pointer",
+                  paddingTop: "5px",
+                  paddingLeft: "5px",
+                  paddingRight: "5px",
+                  paddingBottom: "5px",
+                  marginLeft: "0",
+                  marginRight: "3px",
+                }} />
+            <img src={Person} className="imgCss" alt="Person" style={{
+                  width: "25px",
+                  height: "30px",
+                  cursor: "pointer",
+                  paddingTop: "5px",
+                  paddingLeft: "5px",
+                  paddingRight: "5px",
+                  paddingBottom: "5px",
+                  marginLeft: "0",
+                }}/>
+        </div>
     )
 
 }

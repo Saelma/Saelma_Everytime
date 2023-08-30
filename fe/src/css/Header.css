@@ -1,6 +1,6 @@
 .headerItems{
     border: 1px solid #D3D3D3;
-    width:1000px;
+    width:1140px;
     justify-content: center;
     display: flex;
     padding-top:20px;
@@ -23,6 +23,33 @@
 }
 
 .headerTitle{
-    margin-left: 10px;
+    margin-left: 200px;
+    margin-right: 200px;
+    margin-top: 10px;
+}
 
+.headerLink{
+    cursor:pointer;
+    margin-right:20px;
+    font-weight: bold;
+    position: relative;
+}   
+
+.headerLink:hover{
+    color:#A60406;
+}
+
+.headerLink:hover::after{
+    content: "";
+    position:absolute;
+    bottom: -33px;
+    left: 0;
+    width: 100%;
+    height: 4px; 
+    background-color: #A60406;
+}
+
+.imgCss{
+    border: 1px solid #D3D3D3;
+    border-radius: 30%;
 }

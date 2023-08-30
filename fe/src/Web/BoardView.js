@@ -3,6 +3,7 @@
     import axios from 'axios';
     import "../css/BoardView.css";
     import ModifyForm from "./ModifyForm"
+    import Header from "./Header";
 
     const BoardView = () =>{
         const [ data, setData ] = useState();
@@ -13,7 +14,7 @@
 
         useEffect(() => {
             BoardListView();
-        },[])
+        },)
 
         const BoardListView = async () => {
             await axios.get(`/board/view/${id}`)
@@ -42,6 +43,10 @@
 
         return(
         
+            <div>
+                <span className="header">
+                <Header />
+                </span> 
             <div className="freeBoard">
                     
                 <div>
@@ -78,6 +83,7 @@
                 </div>
 
             </div>  
+            </div>
 
         )
     }
